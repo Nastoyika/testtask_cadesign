@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>TestTask</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <!-- Swiper Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <!-- Скрипт для кнопки меню -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script> -->
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/styleform.css">
+    <link rel="stylesheet" href="./styles/media.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<!--Не забыть расставить заголовки h1-h6-->
+
+<body class="body">
+    <div id="app">
+        <header class="header">
+            <div class="container">
+                <div class="container__header-common">
+                    <a href="#" class="header__logo">
+                        <img src="./images/logo.svg" alt="логотип" class="header__logo-img">
+                    </a>
+                    <div class="nav-toggle" @click="toggleMenu"><span></span></div>
+                    <div class="container__header-text" :class="{ active: isMenuActive }" id="menu">
+                        <ul class="header__list">
+                            <li class="header__list-item">
+                                <a href="#" class="header__list-item-link">О нас</a>
+                            </li>
+                            <li class="header__list-item">
+                                <a href="#" class="header__list-item-link">Наши ценности</a>
+                            </li>
+                            <li class="header__list-item">
+                                <a href="#" class="header__list-item-link">Вакансии</a>
+                            </li>
+                            <li class="header__list-item">
+                                <a href="#" class="header__list-item-link">Начало карьеры</a>
+                            </li>
+                            <li class="header__list-item">
+                                <a href="#" class="header__list-item-link">Контакты</a>
+                            </li>
+                            <li class="header__list-item">
+                                <div class="dropdown">
+                                    <button class="dropdown__button">
+                                        Социальные сети
+                                        <img src="./images/traingle.svg" alt="треугольник" class="dropdown__logo-img">
+                                    </button>
+                                    <div class="dropdown__content">
+                                        <uL class="dropdown__list">
+                                            <li class="communication__list-item">
+                                                <a href="#" class="communication__list-item-link">
+                                                    <img src="./images/vk.svg" alt=""
+                                                        class="communication__list-item-img">
+                                                </a>
+                                            </li>
+                                            <li class="communication__list-item">
+                                                <a href="#" class="communication__list-item-link">
+                                                    <img src="./images/odnokl.svg" alt=""
+                                                        class="communication__list-item-img">
+                                                </a>
+                                            </li>
+                                            <li class="communication__list-item">
+                                                <a href="#" class="communication__list-item-link">
+                                                    <img src="./images/facebook.svg" alt=""
+                                                        class="communication__list-item-img">
+                                                </a>
+                                            </li>
+                                            <li class="communication__list-item">
+                                                <a href="#" class="communication__list-item-link">
+                                                    <img src="./images/Inst.svg" alt=""
+                                                        class="communication__list-item-img">
+                                                </a>
+                                            </li>
+                                        </uL>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <hr class="header__line">
+        <main>
+            <section class="banner">
+                <div class="container">
+                    <div class="banner__img">
+                        <div class="banner__container">
+                            <p class="banner__text">
+                                Энергия твоего роста! -
+                                заряжаем твою карьеру
+                            </p>
+                            <button @click="showModal = true" class="open__button">Стать частью команды</button>
+                            
+                        </div>
+                        <img src="./images/banner-team.png" alt="логотип привелегий" class="banner__container-img">
+                    </div>
+                </div>
+            </section>
+            <section class="advantages">
+                <div class="container">
+                    <h2 class="advantages__title visually-hidden">Наши преимущества</h2>
+                    <div class="swiper advantages-slider"> <!-- advantages__container -->
+                        <div class="advantages__list swiper-wrapper">
+                            <!-- Каждое преимущество становится слайдом -->
+                            <div class="swiper-slide  advantages-swiper-slide">
+                                <div class="advantages__list-item">
+                                    <img src="./images/development.svg" alt="логотип привелегий"
+                                        class="advantages__list-item-img">
+                                    <p class="advantages__list-item-text-main">Развитие</p>
+                                    <p class="advantages__list-item-text-hidden">Какой-то текст</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide advantages-swiper-slide">
+                                <div class="advantages__list-item">
+                                    <img src="./images/education.svg" alt="логотип привелегий"
+                                        class="advantages__list-item-img">
+                                    <p class="advantages__list-item-text-main">Обучение</p>
+                                    <p class="advantages__list-item-text-hidden">Какой-то текст</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide advantages-swiper-slide">
+                                <div class="advantages__list-item">
+                                    <img src="./images/responsibility.svg" alt="логотип привелегий"
+                                        class="advantages__list-item-img">
+                                    <p class="advantages__list-item-text-main">Ответственность</p>
+                                    <p class="advantages__list-item-text-hidden">Какой-то текст</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide advantages-swiper-slide">
+                                <div class="advantages__list-item">
+                                    <img src="./images/dinamic.svg" alt="логотип привелегий"
+                                        class="advantages__list-item-img">
+                                    <p class="advantages__list-item-text-main">Динамика</p>
+                                    <p class="advantages__list-item-text-hidden">Общего центра обслуживания. Современные
+                                        технологии, проекты, рабочие группы</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide advantages-swiper-slide">
+                                <div class="advantages__list-item">
+                                    <img src="./images/comfort.svg" alt="логотип привелегий"
+                                        class="advantages__list-item-img">
+                                    <p class="advantages__list-item-text-main">Комфорт</p>
+                                    <p class="advantages__list-item-text-hidden">Какой-то текст</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide advantages-swiper-slide">
+                                <div class="advantages__list-item">
+                                    <img src="./images/reliability.svg" alt="логотип привелегий"
+                                        class="advantages__list-item-img">
+                                    <p class="advantages__list-item-text-main">Надежность</p>
+                                    <p class="advantages__list-item-text-hidden">Какой-то текст</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Навигация -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="team">
+                <div class="container">
+                    <h2 class="team__title visually-hidden">Наша команда</h2>
+                    <div class="swiper team-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="team__container">
+                                    <img src="./images/team1.png" alt="Команда 1" class="team__list-img">
+                                    <ul class="team__list">
+                                        <li class="team__list-item">
+                                            <p class="team__list-item-member">
+                                                Евдокимова Майя
+                                            </p>
+                                        </li>
+                                        <li class="team__list-item">
+                                            <p class="team__list-item-role">
+                                                Генеральный директор
+                                            </p>
+                                        </li>
+                                        <li class="team__list-item">
+                                            <p class="team__list-item-description">
+                                                Цель нашей работы обеспечить высочайший сервис нашим клиентам.
+                                                Дать возможность бизнесу сосредоточиться на своих ключевых задачах,
+                                                передав функции управления персоналом, казначейства, финансового учёта и
+                                                отчётности нам.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="team__container">
+                                    <img src="./images/team2.png" alt="Команда 2" class="team__list-img">
+                                    <ul class="team__list">
+                                        <li class="team__list-item">
+                                            <p class="team__list-item-member">
+                                                Васильев Дмитрий
+                                            </p>
+                                        </li>
+                                        <li class="team__list-item">
+                                            <p class="team__list-item-role">
+                                                Специалист по привлечению клиентов
+                                            </p>
+                                        </li>
+                                        <li class="team__list-item">
+                                            <p class="team__list-item-description">
+                                                Мы строим прочные связи с клиентами, помогая им найти решения, которые
+                                                ускоряют рост их бизнеса. Наша цель — не просто привлечение, а
+                                                создание партнерства, основанного на доверии и взаимной выгоде.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="team__container">
+                                    <img src="./images/team3.png" alt="Команда 3" class="team__list-img">
+                                    <ul class="team__list">
+                                        <li class="team__list-item">
+                                            <p class="team__list-item-member">
+                                                Рябова Татьяна
+                                            </p>
+                                        </li>
+                                        <li class="team__list-item">
+                                            <p class="team__list-item-role">
+                                                Ведущий аналитик
+                                            </p>
+                                        </li>
+                                        <li class="team__list-item">
+                                            <p class="team__list-item-description">
+                                                Наша задача — трансформировать данные в четкие, обоснованные решения.
+                                                Мы помогаем бизнесу видеть полную картину, находить скрытые возможности
+                                                и
+                                                двигаться вперед уверенно, опираясь на аналитику.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Навигация -->
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <section class="communication">
+                <div class="container">
+                    <div class="communication__container">
+                        <p class="communication__text">Отдел подбора персонала:</p>
+                        <!--            возможно это ссылки???-->
+                        <p class="communication__text-phone">8 800 700 8000</p>
+                        <p class="communication__text-mail">oco_rabota@mail.ru</p>
+                        <button @click="showModal = true" class="open__button">Стать частью команды</button>
+                        <uL class="communication__list">
+                            <li class="communication__list-item">
+                                <a href="#" class="communication__list-item-link">
+                                    <img src="./images/vk.svg" alt="" class="communication__list-item-img">
+                                </a>
+                            </li>
+                            <li class="communication__list-item">
+                                <a href="#" class="communication__list-item-link">
+                                    <img src="./images/odnokl.svg" alt="" class="communication__list-item-img">
+                                </a>
+                            </li>
+                            <li class="communication__list-item">
+                                <a href="#" class="communication__list-item-link">
+                                    <img src="./images/facebook.svg" alt="" class="communication__list-item-img">
+                                </a>
+                            </li>
+                            <li class="communication__list-item">
+                                <a href="#" class="communication__list-item-link">
+                                    <img src="./images/Inst.svg" alt="" class="communication__list-item-img">
+                                </a>
+                            </li>
+                        </uL>
+                    </div>
+                </div>
+            </section>
+            <section class="footer__end">
+                <div class="container">
+                    <div class="footer__container">
+                        <p class="footer__end-address">© 1998–2019,«Компания», 53002, Иваново, Лежневская 34 корпус 1
+                        </p>
+                        <a href="#" class="footer__end-link">Политика обработки персональных данных</a>
+                    </div>
+                </div>
+            </section>
+        </footer>
+
+
+
+        <!-- Application form -->
+        <div v-if="showModal" class="modal">
+            <div class="modal__content">
+                <button @click="closeModal" class="modal__close">X</button>
+                <p class="form__text">Отклик на вакансию</p>
+                <form @submit.prevent="submitForm" class="form">
+                    <!-- Position -->
+                    <div class="form__group">
+                        <input v-model="formData.position" class="form__input"
+                            :class="{ 'error': !valid.position && touched.position }" @blur="touched.position = true"
+                            placeholder="Желаемая вакансия *" />
+                        <span v-if="!valid.position && touched.position" class="form__error">Введите название
+                            вакансии</span>
+                    </div>
+
+                    <!-- Name -->
+                    <div class="form__group">
+                        <input v-model="formData.name" class="form__input"
+                            :class="{ 'error': !valid.name && touched.name }" @blur="touched.name = true"
+                            placeholder="Фамилия, имя и отчество *" />
+                        <span v-if="!valid.name && touched.name" class="form__error">
+                            Введите ФИО через пробел (Пример: Иванов Петр Александрович)
+                        </span>
+                    </div>
+
+                    <!-- Phone with dual placeholders, Email -->
+                    <div class="form__group phone__email">
+                        <div class="input-wrapper">
+                            <input v-model="formData.phone" type="text" class="form__input phone"
+                                :class="{ 'error': !valid.phone && touched.phone }" @blur="touched.phone = true"
+                                @input="formatPhoneNumber" placeholder="Мобильный телефон *"
+                                onfocus="(this.placeholder='+7 (9xx) xxx-xxxx')" />
+                            <span v-if="!valid.phone && touched.phone" class="form__error">
+                                Введите корректный телефон
+                            </span>
+                        </div>
+
+                        <div class="type__email">
+                            <input v-model="formData.email" type="email" class="form__input email"
+                                placeholder="Email" />
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="form__group">
+                        <input v-model="formData.education" class="form__input"
+                            :class="{ 'error': !valid.education && touched.education }" @blur="touched.education = true"
+                            placeholder="Образование *" />
+                        <span v-if="!valid.education && touched.education" class="form__error">
+                            Введите образование
+                        </span>
+
+                    </div>
+
+                    <!-- Address -->
+                    <div class="form__group">
+                        <input v-model="formData.address" class="form__input"
+                            :class="{ 'error': !valid.address && touched.address }" @blur="touched.address = true"
+                            placeholder="Адрес места жительства *" />
+                        <span v-if="!valid.address && touched.address" class="form__error">Введите адрес</span>
+                    </div>
+
+                    <!-- Birth Date, File Upload -->
+                    <div class="form__group birth__file">
+                        <div class="birth__date">
+                            <input v-model="formData.birthDate" type="text" class="form__input birth"
+                                :class="{ 'error': !valid.birthDate && touched.birthDate }"
+                                @blur="touched.birthDate = true" placeholder="День рождения *"
+                                onfocus="(this.type='date')" />
+                            <span v-if="!valid.birthDate && touched.birthDate" class="form__error">Выберите дату</span>
+                        </div>
+
+                        <div class="upload__file">
+                            <label class="form__label">
+                                <input type="file" name="file" @change="handleFile"
+                                    class="form__file visually-hidden" />
+                                <span class="input-file-btn">Загрузить резюме</span>
+                                <span class="input-file-text">
+                                    {{ uploadedFileName || 'Максимум 10мб' }}
+                                </span>
+                            </label>
+                            <button v-if="uploadedFileName" type="button" class="file-remove-btn" @click="removeFile">
+                                Удалить
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Comment -->
+                    <div class="form__group">
+                        <textarea v-model="formData.comment" class="form__textarea"
+                            placeholder="Комментарий"></textarea>
+                    </div>
+
+                    <!-- Agreement and Submit -->
+                    <div class="form__group form__checkbox">
+                        <div class="check__box">
+                            <input type="checkbox" v-model="formData.agreed" id="agreed" class="checkbox" />
+                            <label for="agreed" class="form__checkbox-label">
+                                Я принимаю условия передачи информации *
+                            </label>
+                            <!-- <span v-if="!valid.agreed" class="form__error">Необходимо принять условия</span> -->
+                        </div>
+                        <div class="button__submit">
+                            <button type="submit" class="form__button" :disabled="!isFormValid">Отправить</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    showModal: false,
+                    //Свойства для хранения слайдеров
+                    swiperAdvantages: null,
+                    swiperTeam: null,
+
+                    isMenuActive: false,
+
+                    formData: {
+                        position: '',
+                        name: '',
+                        phone: '',
+                        email: '',
+                        education: '',
+                        address: '',
+                        birthDate: '',
+                        file: null,
+                        comment: '',
+                        agreed: false,
+                    },
+                    touched: {
+                        position: false,
+                        name: false,
+                        phone: false,
+                        education: false,
+                        address: false,
+                        birthDate: false,
+                    },
+                    uploadedFileName: '', // Stores the name of the uploaded file
+                };
+            },
+            computed: {
+                valid() {
+                    return {
+                        position: this.formData.position.trim().length > 0,
+                        name: /^[А-Яа-яЁёA-Za-z\s-]+$/.test(this.formData.name),
+                        phone: /^[+]?[\s\d-()]{10,18}$/.test(this.formData.phone),
+                        education: this.formData.education.trim().length > 0,
+                        address: this.formData.address.trim().length > 0,
+                        birthDate: this.formData.birthDate !== '',
+                        agreed: this.formData.agreed,
+                    };
+                },
+                isFormValid() {
+                    return Object.values(this.valid).every(Boolean);
+                },
+            },
+            methods: {
+                closeModal() {
+                    this.showModal = false;
+                },
+                toggleMenu() {
+                    this.isMenuActive = !this.isMenuActive; // переключаем состояние меню
+                },
+                handleResize() {
+                    if (window.innerWidth >= 1160) {
+                        this.isMenuActive = false; // отключаем меню, если ширина окна >= 1160 пикселей
+                    }
+                },
+                submitForm() {
+                    console.log('Данные формы:', this.formData);
+                    this.resetForm();
+                },
+                resetForm() {
+                    this.formData = {
+                        position: '',
+                        name: '',
+                        phone: '',
+                        email: '',
+                        education: '',
+                        address: '',
+                        birthDate: '',
+                        file: null,
+                        comment: '',
+                        agreed: false,
+                    };
+                    this.touched = {
+                        position: false,
+                        name: false,
+                        phone: false,
+                        education: false,
+                        address: false,
+                        birthDate: false,
+                    };
+                    this.uploadedFileName = '';
+                },
+                handleFile(event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        this.uploadedFileName = file.name;
+                        this.formData.file = file;
+                    }
+                },
+                removeFile() {
+                    this.uploadedFileName = '';
+                    this.formData.file = null;
+                },
+                formatPhoneNumber() {
+                    this.formData.phone = this.formData.phone
+                        .replace(/[^\d+()-\s]/g, '') // Remove invalid characters
+                        .replace(/(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/, '+7 ($2) $3-$4-$5');
+                },
+                //Инициализируем слайдер
+                initializeSwipers() {
+                    // Слайдер для advantages
+                    this.swiperAdvantages = new Swiper(".advantages-slider", {
+                        pagination: {
+                            el: ".advantages-slider .swiper-pagination",
+                            clickable: true,
+                        },
+                        breakpoints: {
+                            0: {
+                                slidesPerView: 1,
+                            },
+                            703: {
+                                slidesPerView: 2,
+                            },
+                            1160: {
+                                slidesPerView: 6,
+                            },
+                        },
+                        loop: true,
+                    });
+
+                    // Слайдер для team
+                    this.swiperTeam = new Swiper(".team-slider", {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                        pagination: {
+                            el: ".team-slider .swiper-pagination",
+                        },
+                        navigation: {
+                            nextEl: ".team-slider .swiper-button-next",
+                            prevEl: ".team-slider .swiper-button-prev",
+                        },
+                        clickable: true,
+                        loop: true,
+                    });
+                },
+            },
+            mounted() {
+                this.initializeSwipers();
+                window.addEventListener('resize', this.handleResize);
+                this.handleResize(); // проверяем ширину окна при загрузке
+            },
+            beforeUnmount() {
+                window.removeEventListener('resize', this.handleResize);
+            },
+        }).mount('#app');
+    </script>
+</body>
+
+</html>

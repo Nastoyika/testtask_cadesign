@@ -1,0 +1,245 @@
+@media (min-width: 1160px) {
+    .advantages-swiper-slide {
+        width: 380px !important;
+    }
+
+    .advantages__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .swiper-pagination {
+        display: none;
+    }
+}
+
+@media (max-width: 1160px) {
+
+    .team__container {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .team__list {
+        max-width: 100%;
+        text-align: center;
+        padding: 0 58px;
+    }
+
+    .team__list-img {
+        max-width: 100%;
+    }
+
+    .team-slider {
+        background: linear-gradient(to bottom, #F7F7F7 70%, transparent 30%);
+    }
+
+    .team__list {
+        background: white;
+    }
+
+    /* показываем кнопку для переключения верхней навигации */
+    .nav-toggle {
+        display: block;
+    }
+
+    .container__header-common {
+        padding: 28px 0;
+    }
+
+    /* скрываем верхнее меню, отменяем обтекание, позиционируем его, сместив на высоту шапки сайта */
+    #menu {
+        max-height: 0;
+        background: linear-gradient(to bottom, #242627 85%, #828282 15%);
+        /* background-color: #242627; */
+        float: none;
+        position: absolute;
+        overflow: hidden;
+        top: 97px;
+        right: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        z-index: 3;
+    }
+
+    .header__list {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 68px 40px;
+        gap: 50px;
+    }
+
+    .header__list-item-link {
+        pointer-events: none;
+    }
+
+    /* делаем элементы списка блочными, чтобы они располагались друг под другом */
+    .header__list-item {
+        display: block;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .header__list-item-link {
+        color: white;
+    }
+
+    .dropdown__button {
+        display: none;
+    }
+
+    .dropdown__content {
+        display: block;
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        width: auto;
+    }
+
+    .dropdown__list {
+        display: flex;
+        gap: 50px;
+    }
+
+    .dropdown .communication__list-item-img{
+        filter: invert(100%) sepia(0%) saturate(7489%) hue-rotate(162deg) brightness(106%) contrast(101%)
+    }
+
+    .communication__list-item:hover .communication__list-item-img {
+        filter: invert(10%) sepia(82%) saturate(3219%) hue-rotate(196deg) brightness(94%) contrast(104%);
+        transition: none;
+    }
+}
+
+@media (max-width: 960px) {
+    .banner__text {
+        font-size: 30px;
+    }
+
+    .banner__container {
+        width: 350px;
+        height: 220px;
+    }
+
+    .banner__container-img {
+        max-height: 350px;
+        align-self: end;
+    }
+}
+
+
+@media (min-width: 780px) and (max-width:1160px) {
+    .team-slider .swiper-pagination {
+        display: none;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        top: 20% !important;
+    }
+
+}
+
+@media (max-width: 780px) and (min-width: 703px) {
+
+    .team-slider .swiper-pagination {
+        display: none;
+    }
+
+    .advantages__list-item {
+        width: 344px !important;
+        min-height: 344px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        top: 20% !important;
+    }
+}
+
+@media (max-width: 773px) {
+    .banner__img {
+        background-image: none;
+        min-height: auto;
+    }
+
+    .banner {
+        min-height: 300px;
+        background-image: url('../images/banner-team2.png');
+        background-position: bottom;
+    }
+
+    .banner__container-img {
+        display: none;
+    }
+
+    .banner__container {
+        height: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .banner__text {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .banner .open__button {
+        position: absolute;
+        bottom: 10%;
+    }
+}
+
+
+@media (max-width: 703px) {
+
+    .advantages__list-item-text-hidden {
+        display: block;
+    }
+
+    .team-slider .swiper-pagination {
+        display: block;
+    }
+
+    .advantages__list-item {
+        border: none;
+        pointer-events: none;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
+
+    .communication__text-phone {
+        font-size: 30px;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    .communication__list-item {
+        width: 47px;
+        height: 35px;
+    }
+
+}
+
+@media (max-width: 460px) and (min-width: 0px) {
+    .team__list-img {
+        height: auto;
+    }
+
+    .header__list{
+        gap: 40px;
+    }
+
+    .dropdown__list {
+        gap: 16px;
+    }
+
+}

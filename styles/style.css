@@ -1,0 +1,472 @@
+/* Common */
+body {
+  font-family: "Helios", sans-serif;
+  font-size: 16px;
+  color: #242627;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: 1330px;
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/*Header*/
+.container__header-common {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  padding: 52px 0 26px;
+}
+
+.header__logo {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.container__header-text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+}
+
+.header__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+  align-items: center;
+  list-style: none;
+}
+
+.header__list-item-link {
+  text-decoration: none;
+  color: #242627;
+  font-weight: 500;
+  position: relative;
+}
+
+.header__list-item-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #f57c00;
+}
+
+/* Dropdown list */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown__content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 19px;
+  width: 137px;
+}
+
+.dropdown__button {
+  padding: 8px 40px 8px 0;
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: blue;
+}
+
+.dropdown__logo-img {
+  position: relative;
+  bottom: 2px;
+}
+
+.dropdown:hover .dropdown__content {
+  display: block;
+}
+
+.dropdown__content div {
+  margin: 5px 0;
+}
+
+.dropdown__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Banner */
+.banner {
+  margin-top: 25px;
+  position: relative;
+  background-image: url('../images/background.png');
+  background-color: #003264;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: right;
+  min-height: 400px;
+  color: white;
+}
+
+.banner__img {
+  background-image: url('../images/Union.png');
+  min-height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.banner__container {
+  width: 480px;
+  height: 220px;
+  align-self: center;
+}
+
+.banner__container-img {
+  max-height: 400px;
+}
+
+.banner__text {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+
+/* Advantages */
+
+/* Стили для advantages-slider */
+.advantages-slider {
+  position: relative;
+  padding: 36px 0;
+}
+
+.advantages-slider .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.advantages-slider .swiper-pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+:root {
+  --swiper-theme-color: #f57c00
+}
+
+.advantages__list-item:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.advantages__list-item:hover .advantages__list-item-text-hidden {
+  display: block;
+}
+
+.advantages__container {
+  padding: 40px;
+
+}
+
+.advantages__list-item {
+  width: 380px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #EDEDED;
+  position: relative;
+  cursor: pointer;
+
+}
+
+.advantages__list-item-text-main {
+  font-size: 20px;
+}
+
+.advantages__list-item-text-hidden {
+  padding: 0 45px;
+  text-align: center;
+  display: none;
+  color: #646464;
+}
+
+.advantages__list-item:hover .advantages__list-item-text-hidden,
+.advantages__list-item:focus-within .advantages__list-item-text-hidden {
+  display: block;
+}
+
+.advantages__list-item:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.advantages__list-item:hover .advantages__list-item-img {
+  filter: invert(68%) sepia(17%) saturate(5713%) hue-rotate(342deg) brightness(95%) contrast(91%);
+  transition: none;
+}
+
+.advantages__list-item-img {
+  margin: 20px;
+}
+
+.advantages__list-item-text-main {
+  font-weight: 700;
+}
+
+/* Team */
+
+/* Контейнер для слайдов */
+.team {
+  padding-top: 36px;
+}
+
+.team-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 36px 0 36px;
+  background-color: #F7F7F7;
+}
+
+/* Каждый слайд */
+.team__container {
+  max-width: 1290px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Блок с текстом (справа) */
+.team__list {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 49px 58px 0 58px;
+  text-align: left;
+}
+
+.team__list-item-member {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+.team__list-item-role {
+  font-size: 18px;
+  font-weight: 500;
+  color: #777;
+}
+
+.team__list-item-description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Блок с изображением (слева) */
+.team__list-img {
+  max-width: 400px;
+  height: 425px;
+  border-radius: 10px;
+  object-fit: cover;
+  order: 1;
+  /* Гарантируем, что изображение будет первым в потоке */
+}
+
+/* Стили кнопок навигации */
+.swiper-button-prev,
+.swiper-button-next {
+  width: 52px;
+  height: 94px;
+  border: 2px solid #E0E0E0;
+  background-color: #F7F7F7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+:root {
+  --swiper-navigation-color: #242627;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: white;
+  border: none;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px;
+  color: inherit;
+}
+
+
+/*Footer*/
+
+.footer {
+  padding-top: 36px;
+}
+
+.communication {
+  background-color: #F7F7F7;
+}
+
+.communication__container {
+  padding: 72px 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.communication__text {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.communication__text-phone {
+  font-size: 64px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.communication__text-mail {
+  font-size: 18px;
+  color: #187CD3;
+  font-weight: 400;
+}
+
+.communication__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 48px;
+}
+
+.communication__list-item {
+  width: 68px;
+  height: 50px;
+  box-sizing: border-box;
+  border: 1px solid #E0E0E0;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.communication__list-item:hover .communication__list-item-img {
+  filter: invert(10%) sepia(82%) saturate(3219%) hue-rotate(196deg) brightness(94%) contrast(104%);
+  transition: none;
+}
+
+.footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+}
+
+.footer__end-address {
+  font-size: 11px;
+  color: #828282;
+  margin: 0;
+  padding: 40px 0 10px 0;
+}
+
+.footer__end-link {
+  font-size: 14px;
+  color: #187CD3;
+  margin: 0;
+  padding: 7px 0 40px 0;
+}
+
+
+/* menu */
+
+
+
+/* кнопка переключения меню, появляющаяся при ширине 768px */
+
+.nav-toggle {
+  display: none;
+  position: relative;
+  float: right;
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  position: absolute;
+  top: 19px;
+  left: 8px;
+  right: 8px;
+  height: 2px;
+  background: #003264;
+}
+
+.nav-toggle span:before,
+.nav-toggle span:after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #003264;
+}
+
+.nav-toggle span:before {
+  top: -10px;
+}
+
+.nav-toggle span:after {
+  bottom: -10px;
+}
+
+/* класс, который будет добавлен в верхнему меню при нажатии на кнопку и покажет скрытое меню*/
+#menu.active {
+  min-height: 550px;
+}
