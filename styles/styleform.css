@@ -1,6 +1,6 @@
 /* Form styles */
 
-.open__button {
+.open__button, .form__button {
   background-color: #f57c00;
   color: white;
   border: none;
@@ -10,7 +10,16 @@
   cursor: pointer;
 }
 
-.open__button:hover {
+.form__button{
+  padding: 23px 78px;
+}
+
+.form__button:disabled{
+  background-color: gray;
+  cursor: default;
+}
+
+.open__button:hover, .form__button:hover:enabled {
   background-color: #d66800;
 }
 
